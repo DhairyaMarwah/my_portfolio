@@ -251,9 +251,9 @@ const Index = () => {
           </div>
           <div className="about-section | container">
             <div className="about-section__left">
-              <h1 className="heading | about-heading">
+              <h2 className="heading | about-heading">
                 About <br /> <span> me</span>
-              </h1>
+              </h2>
               <p className="paragraph | about-paragraph">
                 I have been working as a Developer for the past two years having
                 gained extensive experience in developing software solutions. I
