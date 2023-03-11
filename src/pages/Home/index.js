@@ -7,6 +7,7 @@ import Discord from "../../assets/img/discord.svg";
 import Github from "../../assets/img/github.svg";
 import Me from "../../assets/img/me.png";
 import Webo from "../../assets/img/webo.png";
+import TEDx from "../../assets/img/tedx.png";
 import Tools from "../../assets/img/tools.png";
 import s2loop from "../../assets/img/s2loop.png";
 import mobile from "../../assets/img/mobile.png";
@@ -100,6 +101,12 @@ const Index = () => {
       img: Jalsa,
       category: "design",
       path: "/projects/jalsa",
+    },
+    {
+      id: 11,
+      img: TEDx,
+      category: "web",
+      path: "/projects/tedx-geu",
     },
   ];
   const experience = [
@@ -425,7 +432,9 @@ const Index = () => {
               <div className="contact-heading | heading">
                 Don't be <br /> <span> a stranger 👋</span>
               </div>
-              <div className="sub-heading | contact-sub-heading">Send me a message</div>
+              <div className="sub-heading | contact-sub-heading">
+                Send me a message
+              </div>
               <form>
                 <div className="contact-form-inputs">
                   <div className="contact-form-input">
