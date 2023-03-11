@@ -187,4 +187,374 @@ button {
   left: -5%;
 }
 
+/* -------- about section end -------- */
+
+/* -------- projects section -------- */
+.projects-section {
+  width: 65%;
+  margin: 0 auto;
+}
+.projects-circle {
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  border: 5.58968px solid #112a46;
+  border-radius: 50%;
+}
+.projects-heading {
+  position: relative;
+  top: -30px;
+}
+.projects-tab {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+.projects-grid {
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  flex-wrap: wrap;
+  text-align: center;
+  height: 1200px;
+  margin-top: 5rem;
+}
+.projects-grid > div {
+  cursor: pointer;
+}
+.projects-satisfaction {
+  text-align: center;
+}
+.project-subheading {
+  font-size: 24px;
+  line-height: 46px;
+  color: #112a46;
+}
+.project-section-btn {
+  margin: 0 auto;
+  width: fit-content;
+  margin-top: 1rem;
+}
+.projects-tab > div {
+  font-weight: 600;
+  font-size: 16.27px;
+  line-height: 14px;
+  padding: 12px 14px;
+  border-radius: 12.67px;
+  text-align: center;
+  background: #b7b9bc;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  cursor: pointer;
+}
+.active-tab {
+  background: #112a46 !important;
+  color: #ffffff;
+}
+.projects-heading .heading {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 26px;
+  /* identical to box height, or 72% */
+
+  letter-spacing: -0.03em;
+
+  color: #112a46;
+}
+
+/* -------- projects section end -------- */
+
+/* -------- experience section -------- */
+.experience-heaing {
+  color: #112a46;
+}
+.experience-card {
+  margin-top: 1rem;
+}
+.experience-card-heading {
+  font-weight: 600;
+  padding-left: 3rem;
+  font-size: 30.4438px;
+  line-height: 40px;
+  color: #112a46;
+  position: relative;
+}
+.experience-card-sub-heading,
+.experience-card-date {
+  font-weight: 500;
+  font-size: 24.9086px;
+  line-height: 37px;
+  color: rgba(17, 42, 70, 0.8);
+}
+.experience-section {
+  width: 80%;
+  transform: scale(0.95);
+  margin: 0 auto;
+}
+.experience-heaing {
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+}
+.experience-container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.experience-circle {
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  border: 3.08968px solid #112a46;
+  border-radius: 50%;
+  position: absolute;
+  left: -14px;
+}
+.experience-card-content-border {
+  border-left: 2.17572px solid #112a46;
+  padding-bottom: 2rem;
+  padding-left: 3rem;
+}
+.experience-container-left > div:last-child .experience-card-content-border {
+  border-left: none;
+}
+.experience-card-date {
+  color: #fcb618;
+}
+.experience-card-description {
+  font-weight: 500;
+  font-size: 19.3734px;
+  line-height: 26px;
+  /* or 136% */
+
+  letter-spacing: -0.03em;
+
+  color: rgba(17, 42, 70, 0.6);
+}
+
+/* -------- experience section end -------- */
+
+/* -------- sold yet section -------- */
+
+.sold-yet-section {
+  text-align: center;
+  width: 70%;
+  margin: 7rem auto;
+}
+.sold-yet-section .heading {
+  color: #112a46;
+}
+.sold-yet-section .paragraph {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  opacity: 0.9;
+  padding: 0 7rem;
+  color: #3c5065;
+}
+.sold-yet-section .paragraph span {
+  text-decoration: underline;
+}
+
+/* -------- sold yet section end -------- */
+
+/* -------- tools section -------- */
+
+.tools-section {
+  margin-top: 18rem;
+  text-align: center;
+}
+.tools-img img {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+/* -------- tools section end -------- */
+
+/* -------- contact section -------- */
+
+.contact-form-btn button {
+  box-shadow: 0px 92.809px 37.1236px rgba(20, 4, 47, 0.01),
+    0px 53.0337px 31.8202px rgba(20, 4, 47, 0.05),
+    0px 23.8652px 23.8652px rgba(20, 4, 47, 0.09),
+    0px 5.30337px 13.2584px rgba(20, 4, 47, 0.1),
+    0px 0px 0px rgba(20, 4, 47, 0.1);
+}
+.contact-heading {
+  color: #112a46;
+}
+.contact-section-left {
+  width: 50%;
+}
+.contact-sub-heading {
+  font-weight: 500;
+  font-size: 29.1685px;
+  line-height: 61px;
+  letter-spacing: -0.03em;
+  margin-top: 2rem;
+  color: #112a46;
+}
+.contact-form-inputs {
+  width: 100%;
+}
+.contact-form-input {
+  width: 100%;
+  margin-top: 2rem;
+}
+.contact-form-input p {
+  font-weight: 500;
+  font-size: 21.2135px;
+  margin-bottom: 8px;
+  line-height: 32px;
+  /* identical to box height */
+
+  color: #112a46;
+}
+.contact-form-input input,
+.contact-form-input textarea {
+  width: 70%;
+  background: #e7e6e0;
+  border: 1.32584px solid #757575;
+  border-radius: 14.5843px;
+  padding: 11px 25px;
+  font-weight: 600;
+  font-size: 21.2135px;
+  line-height: 32px;
+  color: rgba(84, 84, 84, 0.85);
+}
+.contact-form-input textarea {
+  resize: none;
+  height: 200px;
+}
+.contact-section {
+  align-items: flex-end;
+}
+.contact-section-right {
+  position: relative;
+  bottom: -40px;
+}
+
+.contact-section {
+  padding-bottom: 0;
+  position: relative;
+  bottom: -20px;
+}
+/* -------- contact section end -------- */
+
+/* -------- footer section -------- */
+.footer {
+  background: #112a46;
+  text-align: center;
+  padding-top: 23px;
+  color: #ffff;
+  border-radius: 97px 97px 0 0;
+}
+.footer-rect {
+  width: 108px;
+  height: 7px;
+  background: #e7e6e0;
+  margin: 0 auto;
+
+  margin-bottom: 100px;
+  border-radius: 3px;
+}
+.footer-info {
+  border: 1.5px dashed #e6e5df;
+
+  border-spacing: 10px;
+  border-radius: 20px;
+  width: 75%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+.footer-img img {
+  width: 100px;
+  position: relative;
+  top: -50px;
+}
+.footer-info-flex {
+  padding: 0 2rem;
+  padding-bottom: 6rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-socials p {
+  opacity: 0.85;
+  font-size: 18px;
+}
+.footer-socials .socials {
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.copyright {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.03em;
+  padding-top: 25px;
+  border-top: 1px solid #fff;
+  padding-bottom: 7rem;
+  width: 40%;
+  margin: 0 auto;
+
+  color: #bcc0c1;
+}
+.name-logo-footer {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 20px;
+  margin-top: 4rem;
+  /* identical to box height, or 94% */
+
+  letter-spacing: -0.02em;
+
+  color: #e7e6e0;
+  margin-bottom: 2rem;
+}
+.footer-info-flex h2 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 20px;
+  /* identical to box height, or 94% */
+
+  letter-spacing: -0.02em;
+
+  color: #e7e6e0;
+}
+.footer-info-flex p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  /* or 125% */
+
+  text-align: center;
+  letter-spacing: -0.03em;
+
+  color: #e7e6e0;
+}
+.footer-btn button {
+  background: #fcb618;
+  box-shadow: 0px 73px 29px rgba(20, 4, 47, 0.01),
+    0px 41px 25px rgba(20, 4, 47, 0.05), 0px 18px 18px rgba(20, 4, 47, 0.09),
+    0px 5px 10px rgba(20, 4, 47, 0.1), 0px 0px 0px rgba(20, 4, 47, 0.1);
+  border-radius: 10.2913px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  /* or 151% */
+
+  letter-spacing: -0.02em;
+  padding: 11px 20px;
+  color: #ffffff;
+  border: none;
+}
+.footer-btn button span {
+  font-size: 24px;
+}
+/* -------- footer section end -------- */
+
 /*------- rest section end --------*/

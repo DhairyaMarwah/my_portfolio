@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
+import { Flipper, Flipped } from "react-flip-toolkit";
 import Arrow from "../../assets/img/rightarrow.svg";
 import Insta from "../../assets/img/insta.svg";
 import Linkedin from "../../assets/img/linkedin.svg";
 import Discord from "../../assets/img/discord.svg";
 import Github from "../../assets/img/github.svg";
 import Me from "../../assets/img/me.png";
+import Webo from "../../assets/img/webo.png";
+import Tools from "../../assets/img/tools.png";
+import s2loop from "../../assets/img/s2loop.png";
+import mobile from "../../assets/img/mobile.png";
+import Contact from "../../assets/img/contact.png";
+import Experience from "../../assets/img/experience.png";
+import phd from "../../assets/img/phd.png";
+import onlinecode from "../../assets/img/onlinecode.png";
+import buzz from "../../assets/img/buzz.png";
+import nft from "../../assets/img/nft.png";
+import ayg from "../../assets/img/ayg.png";
+import dotone from "../../assets/img/dotone.png";
+import Jalsa from "../../assets/img/jalsa.png";
 import About from "../../assets/img/about.png";
 import Navbar from "../../components/Navbar";
 import AboutGif from "../../assets/img/about.gif";
@@ -24,6 +38,133 @@ const Index = () => {
       duration: 1200,
     });
   };
+  const projects = [
+    {
+      id: 1,
+      img: Webo,
+      category: "web",
+      path: "/projects/webo-website-builder",
+    },
+    {
+      id: 2,
+      img: s2loop,
+      category: "web",
+      path: "/projects/s2loop",
+    },
+    {
+      id: 3,
+      img: phd,
+      category: "web",
+      path: "/projects/geu-phd",
+    },
+
+    {
+      id: 4,
+      img: onlinecode,
+      category: "web",
+      path: "/projects/online-code-compiler",
+    },
+    {
+      id: 5,
+      img: buzz,
+      category: "web",
+      path: "/projects/geu-buzz",
+    },
+    {
+      id: 6,
+      img: mobile,
+      category: "design",
+      path: "/projects/money-pay",
+    },
+
+    {
+      id: 7,
+      img: nft,
+      category: "web",
+      path: "/projects/nft-warranty",
+    },
+    {
+      id: 8,
+      img: ayg,
+      category: "design",
+      path: "/projects/ayg",
+    },
+    {
+      id: 9,
+      img: dotone,
+      category: "web",
+      path: "/projects/dotone",
+    },
+    {
+      id: 10,
+      img: Jalsa,
+      category: "design",
+      path: "/projects/jalsa",
+    },
+  ];
+  const experience = [
+    {
+      id: 1,
+      company: "Saaspect",
+      role: "React-Redux Developer",
+      duration: "Aug 2021 - Jun 2022",
+      latest: false,
+      description:
+        "Developed a wide range of Control Management Systems with different level of administrator and user control (capable of handling lakhs of data).Analyzed requirements and designed, developed and implemented software applications for multiple websites.",
+    },
+    {
+      id: 2,
+      company: "EstudyPal",
+      role: "Software Developer | UI/UX",
+      duration: "April 2022 - Nov 2022",
+      latest: false,
+      description:
+        "Designed and developed a React + PHP framed citation generator tool , for an organisation that provides citation tools (APA, MLA,CHICAGO etc), proofreading, writing assignments, and plagiarism checking.",
+    },
+
+    {
+      id: 3,
+      company: "VS Infotech",
+      role: "Product Developer Intern",
+      duration: "July 2022 - Dec 2022",
+      latest: false,
+      description:
+        "Implementing an ERP management system to handle all college day-to-day activities, such as results of students, fees paid and pending by students, homework and assignments, attendance, and so forth.          ",
+    },
+    {
+      id: 4,
+      company: "Unsweetened Beauty",
+      role: "React Js | React Native Intern ",
+      duration: "Jan 2023 - Mar 2023",
+      latest: true,
+      description:
+        "Developing scalable App and WebApp for Unsweetened Beauty          ",
+    },
+  ];
+
+  const [selectedTab, setSelectedTab] = useState("all");
+
+  const filteredProjects =
+    selectedTab === "all"
+      ? projects
+      : projects.filter((project) => project.category === selectedTab);
+
+  const handleTabClick = (tab) => {
+    setSelectedTab(tab);
+  };
+
+  const staggerConfig = {
+    speed: 0.5,
+    easing: "ease-out",
+    delay: 0.1,
+    staggerDirection: "reverse",
+  };
+
+  const springConfig = {
+    stiffness: 500,
+    damping: 40,
+  };
+
   return (
     <>
       <Navbar handleClick={handleClick} />
@@ -117,6 +258,202 @@ const Index = () => {
             </div>
             <div className="about-section__right">
               <img src={About} alt="" />
+            </div>
+          </div>
+          <div className="projects-section">
+            <div className="projects-big-header">
+              <svg
+                width="769"
+                height="192"
+                viewBox="0 0 769 192"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M30.8099 58.0475C33.8006 53.382 37.9277 49.6137 43.1914 46.7426C48.455 43.8716 54.6158 42.436 61.6739 42.436C69.9282 42.436 77.4049 44.5295 84.1041 48.7165C90.8032 52.9035 96.0668 58.8849 99.8949 66.6607C103.843 74.4365 105.816 83.4684 105.816 93.7564C105.816 104.044 103.843 113.136 99.8949 121.031C96.0668 128.807 90.8032 134.848 84.1041 139.155C77.4049 143.342 69.9282 145.436 61.6739 145.436C54.7354 145.436 48.5746 144 43.1914 141.129C37.9277 138.258 33.8006 134.549 30.8099 130.004V191.731H0.12538V43.8716H30.8099V58.0475ZM74.5937 93.7564C74.5937 86.1002 72.4404 80.1188 68.1338 75.8122C63.9468 71.386 58.743 69.1728 52.5223 69.1728C46.4213 69.1728 41.2175 71.386 36.9109 75.8122C32.7239 80.2384 30.6305 86.2796 30.6305 93.9358C30.6305 101.592 32.7239 107.633 36.9109 112.059C41.2175 116.486 46.4213 118.699 52.5223 118.699C58.6233 118.699 63.8272 116.486 68.1338 112.059C72.4404 107.514 74.5937 101.413 74.5937 93.7564ZM167.493 145.436C157.683 145.436 148.831 143.342 140.935 139.155C133.159 134.968 126.999 128.987 122.453 121.211C118.026 113.435 115.813 104.343 115.813 93.9358C115.813 83.6478 118.086 74.6159 122.632 66.8401C127.178 58.9447 133.399 52.9035 141.294 48.7165C149.189 44.5295 158.042 42.436 167.851 42.436C177.661 42.436 186.513 44.5295 194.409 48.7165C202.304 52.9035 208.525 58.9447 213.071 66.8401C217.617 74.6159 219.889 83.6478 219.889 93.9358C219.889 104.224 217.557 113.315 212.891 121.211C208.345 128.987 202.065 134.968 194.05 139.155C186.154 143.342 177.302 145.436 167.493 145.436ZM167.493 118.878C173.354 118.878 178.319 116.725 182.386 112.418C186.573 108.112 188.667 101.951 188.667 93.9358C188.667 85.9207 186.633 79.7599 182.566 75.4533C178.618 71.1467 173.713 68.9934 167.851 68.9934C161.87 68.9934 156.905 71.1467 152.958 75.4533C149.01 79.6403 147.036 85.8011 147.036 93.9358C147.036 101.951 148.95 108.112 152.778 112.418C156.726 116.725 161.631 118.878 167.493 118.878ZM266.853 60.5596C270.442 55.0568 274.928 50.7502 280.311 47.6399C285.694 44.4099 291.675 42.7949 298.255 42.7949V75.2739H289.821C282.165 75.2739 276.423 76.9487 272.595 80.2982C268.767 83.5282 266.853 89.2703 266.853 97.5246V144H236.168V43.8716H266.853V60.5596ZM368.728 117.981V144H353.116C341.991 144 333.318 141.308 327.097 135.925C320.877 130.422 317.766 121.51 317.766 109.188V69.3523H305.564V43.8716H317.766V19.4675H348.451V43.8716H368.548V69.3523H348.451V109.547C348.451 112.538 349.169 114.691 350.604 116.007C352.04 117.323 354.432 117.981 357.782 117.981H368.728ZM436.063 69.3523H419.555V144H388.87V69.3523H377.745V43.8716H388.87V41.0005C388.87 28.6789 392.399 19.3479 399.457 13.0076C406.515 6.54773 416.863 3.31777 430.501 3.31777C432.774 3.31777 434.448 3.37759 435.525 3.49721V29.5163C429.663 29.1574 425.536 29.9948 423.144 32.0284C420.751 34.0621 419.555 37.7107 419.555 42.9744V43.8716H436.063V69.3523ZM496.06 145.436C486.25 145.436 477.398 143.342 469.503 139.155C461.727 134.968 455.566 128.987 451.02 121.211C446.594 113.435 444.381 104.343 444.381 93.9358C444.381 83.6478 446.654 74.6159 451.2 66.8401C455.745 58.9447 461.966 52.9035 469.861 48.7165C477.757 44.5295 486.609 42.436 496.419 42.436C506.228 42.436 515.081 44.5295 522.976 48.7165C530.872 52.9035 537.092 58.9447 541.638 66.8401C546.184 74.6159 548.457 83.6478 548.457 93.9358C548.457 104.224 546.124 113.315 541.459 121.211C536.913 128.987 530.632 134.968 522.617 139.155C514.722 143.342 505.869 145.436 496.06 145.436ZM496.06 118.878C501.922 118.878 506.886 116.725 510.954 112.418C515.141 108.112 517.234 101.951 517.234 93.9358C517.234 85.9207 515.2 79.7599 511.133 75.4533C507.185 71.1467 502.281 68.9934 496.419 68.9934C490.437 68.9934 485.473 71.1467 481.525 75.4533C477.577 79.6403 475.604 85.8011 475.604 93.9358C475.604 101.951 477.518 108.112 481.346 112.418C485.293 116.725 490.198 118.878 496.06 118.878ZM595.42 11.2132V144H564.736V11.2132H595.42ZM633.089 33.464C627.706 33.464 623.279 31.9088 619.81 28.7985C616.461 25.5685 614.786 21.6208 614.786 16.9553C614.786 12.1702 616.461 8.22251 619.81 5.11219C623.279 1.88224 627.706 0.267264 633.089 0.267264C638.352 0.267264 642.659 1.88224 646.009 5.11219C649.478 8.22251 651.212 12.1702 651.212 16.9553C651.212 21.6208 649.478 25.5685 646.009 28.7985C642.659 31.9088 638.352 33.464 633.089 33.464ZM648.341 43.8716V144H617.657V43.8716H648.341ZM716.156 145.436C706.347 145.436 697.494 143.342 689.599 139.155C681.823 134.968 675.662 128.987 671.116 121.211C666.69 113.435 664.477 104.343 664.477 93.9358C664.477 83.6478 666.75 74.6159 671.296 66.8401C675.842 58.9447 682.062 52.9035 689.958 48.7165C697.853 44.5295 706.706 42.436 716.515 42.436C726.325 42.436 735.177 44.5295 743.072 48.7165C750.968 52.9035 757.189 58.9447 761.734 66.8401C766.28 74.6159 768.553 83.6478 768.553 93.9358C768.553 104.224 766.22 113.315 761.555 121.211C757.009 128.987 750.729 134.968 742.714 139.155C734.818 143.342 725.966 145.436 716.156 145.436ZM716.156 118.878C722.018 118.878 726.983 116.725 731.05 112.418C735.237 108.112 737.33 101.951 737.33 93.9358C737.33 85.9207 735.297 79.7599 731.229 75.4533C727.282 71.1467 722.377 68.9934 716.515 68.9934C710.534 68.9934 705.569 71.1467 701.621 75.4533C697.674 79.6403 695.7 85.8011 695.7 93.9358C695.7 101.951 697.614 108.112 701.442 112.418C705.39 116.725 710.294 118.878 716.156 118.878Z"
+                  fill="#B7B9BC"
+                />
+              </svg>
+            </div>
+            <div className="projects-heading">
+              <div className="projects-circle"></div>
+              <div className="heading ">projects</div>
+            </div>
+            <div className="projects-tab">
+              <div
+                className={
+                  selectedTab === "all"
+                    ? "projects-tab__item  | active-tab"
+                    : "projects-tab__item"
+                }
+                onClick={() => handleTabClick("all")}
+              >
+                All
+              </div>
+              <div
+                className={
+                  selectedTab === "web"
+                    ? "projects-tab__item  | active-tab"
+                    : "projects-tab__item"
+                }
+                onClick={() => handleTabClick("web")}
+              >
+                Web
+              </div>
+              <div
+                className={
+                  selectedTab === "design"
+                    ? "projects-tab__item  | active-tab"
+                    : "projects-tab__item"
+                }
+                onClick={() => handleTabClick("design")}
+              >
+                Design
+              </div>
+            </div>
+            <Flipper
+              flipKey={filteredProjects.map((project) => project.id).join("")}
+              staggerConfig={staggerConfig}
+            >
+              <div className="projects-grid">
+                {filteredProjects.slice(0, 9).map((project) => (
+                  <Flipped
+                    key={project.path}
+                    flipId={project.path}
+                    stagger="card"
+                    spring={springConfig}
+                  >
+                    <div>
+                      <img src={project.img} alt={project.path} />
+                    </div>
+                  </Flipped>
+                ))}
+              </div>
+            </Flipper>
+            <div className="projects-satisfaction">
+              <h2 className="sub-heading | project-subheading">
+                Still not satisfied ?
+              </h2>
+              <div className="btns | project-section-btn">
+                <button
+                  style={{ color: "#fff", backgroundColor: "#FDB400" }}
+                  className="btn | primary"
+                >
+                  All Projects <img src={Arrow} alt="" />{" "}
+                </button>
+                <button
+                  style={{
+                    color: "#112A46",
+                    border: "1.3px  solid #FDB400",
+                    backgroundColor: "transparent",
+                  }}
+                  className="btn | secondary"
+                >
+                  Github
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="experience-section">
+            <h2 className="heading | experience-heaing">
+              My <br /> <span>Experience 🚀</span>
+            </h2>
+            <div className="experience-container ">
+              <div className="experience-container-left">
+                {experience.map((exp, index) => {
+                  return (
+                    <div className="experience-card">
+                      <div className="experience-card-content">
+                        <div className="experience-card-heading">
+                          <div className="experience-circle"></div>{" "}
+                          {exp.company}
+                        </div>
+                        <div className="experience-card-content-border">
+                          <div className="experience-card-sub-heading">
+                            {exp.role}
+                          </div>
+                          <div className="experience-card-date">
+                            {exp.duration}
+                          </div>
+                          <div className="experience-card-description">
+                            {exp.description}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="experience-container-right">
+                <img src={Experience} alt="" />
+              </div>
+            </div>
+          </div>
+          <div className="sold-yet-section">
+            <div className="heading">
+              Sold <span> yet?</span> 🤔
+            </div>
+            <div className="paragraph">
+              Thanks for stopping by, I’m currently looking to join a new team
+              of creative designer and developers. If you think we might be good
+              for one another, give me a <span> call ☎️</span> or send me an{" "}
+              <span> email 📧</span>
+            </div>
+          </div>
+          <div className="tools-section">
+            <div className="tools-big-heading">
+              <svg
+                width="534"
+                height="277"
+                viewBox="0 0 534 277"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M63.2646 117.981V144H47.6532C36.5278 144 27.8548 141.308 21.6342 135.925C15.4135 130.422 12.3032 121.51 12.3032 109.188V69.3523H0.10116V43.8716H12.3032V19.4675H42.9877V43.8716H63.0852V69.3523H42.9877V109.547C42.9877 112.538 43.7055 114.691 45.141 116.007C46.5765 117.323 48.9691 117.981 52.3187 117.981H63.2646ZM125.935 145.436C116.125 145.436 107.273 143.342 99.3772 139.155C91.6014 134.968 85.4406 128.987 80.8947 121.211C76.4685 113.435 74.2554 104.343 74.2554 93.9358C74.2554 83.6478 76.5283 74.6159 81.0742 66.8401C85.62 58.9447 91.8407 52.9035 99.7361 48.7165C107.632 44.5295 116.484 42.436 126.293 42.436C136.103 42.436 144.955 44.5295 152.851 48.7165C160.746 52.9035 166.967 58.9447 171.513 66.8401C176.059 74.6159 178.332 83.6478 178.332 93.9358C178.332 104.224 175.999 113.315 171.333 121.211C166.787 128.987 160.507 134.968 152.492 139.155C144.597 143.342 135.744 145.436 125.935 145.436ZM125.935 118.878C131.796 118.878 136.761 116.725 140.828 112.418C145.015 108.112 147.109 101.951 147.109 93.9358C147.109 85.9207 145.075 79.7599 141.008 75.4533C137.06 71.1467 132.155 68.9934 126.293 68.9934C120.312 68.9934 115.348 71.1467 111.4 75.4533C107.452 79.6403 105.478 85.8011 105.478 93.9358C105.478 101.951 107.392 108.112 111.22 112.418C115.168 116.725 120.073 118.878 125.935 118.878ZM240.188 145.436C230.379 145.436 221.527 143.342 213.631 139.155C205.855 134.968 199.694 128.987 195.149 121.211C190.722 113.435 188.509 104.343 188.509 93.9358C188.509 83.6478 190.782 74.6159 195.328 66.8401C199.874 58.9447 206.095 52.9035 213.99 48.7165C221.885 44.5295 230.738 42.436 240.547 42.436C250.357 42.436 259.209 44.5295 267.105 48.7165C275 52.9035 281.221 58.9447 285.767 66.8401C290.312 74.6159 292.585 83.6478 292.585 93.9358C292.585 104.224 290.253 113.315 285.587 121.211C281.041 128.987 274.761 134.968 266.746 139.155C258.85 143.342 249.998 145.436 240.188 145.436ZM240.188 118.878C246.05 118.878 251.015 116.725 255.082 112.418C259.269 108.112 261.363 101.951 261.363 93.9358C261.363 85.9207 259.329 79.7599 255.262 75.4533C251.314 71.1467 246.409 68.9934 240.547 68.9934C234.566 68.9934 229.601 71.1467 225.654 75.4533C221.706 79.6403 219.732 85.8011 219.732 93.9358C219.732 101.951 221.646 108.112 225.474 112.418C229.422 116.725 234.327 118.878 240.188 118.878ZM339.549 11.2132V144H308.864V11.2132H339.549ZM402.519 145.436C393.786 145.436 386.01 143.94 379.191 140.949C372.372 137.959 366.989 133.891 363.041 128.747C359.094 123.484 356.881 117.622 356.402 111.162H386.728C387.087 114.631 388.702 117.443 391.573 119.596C394.444 121.749 397.973 122.826 402.16 122.826C405.988 122.826 408.919 122.108 410.952 120.673C413.106 119.117 414.182 117.144 414.182 114.751C414.182 111.88 412.687 109.786 409.696 108.471C406.706 107.035 401.861 105.48 395.161 103.805C387.984 102.13 382.002 100.396 377.217 98.6013C372.432 96.6872 368.305 93.7563 364.836 89.8086C361.367 85.7413 359.632 80.2982 359.632 73.4794C359.632 67.7373 361.187 62.5335 364.298 57.868C367.527 53.0829 372.193 49.3146 378.294 46.5632C384.515 43.8118 391.872 42.436 400.365 42.436C412.926 42.436 422.796 45.5464 429.973 51.767C437.27 57.9877 441.457 66.242 442.534 76.53H414.182C413.704 73.0607 412.149 70.3093 409.517 68.2756C407.005 66.242 403.655 65.2251 399.468 65.2251C395.879 65.2251 393.128 65.9429 391.214 67.3784C389.3 68.6943 388.343 70.5486 388.343 72.9411C388.343 75.8122 389.838 77.9655 392.829 79.401C395.939 80.8366 400.724 82.2721 407.184 83.7076C414.601 85.6217 420.642 87.5357 425.308 89.4497C429.973 91.2442 434.041 94.2349 437.51 98.4218C441.099 102.489 442.953 107.992 443.072 114.93C443.072 120.792 441.398 126.056 438.048 130.721C434.818 135.267 430.093 138.856 423.872 141.488C417.771 144.12 410.653 145.436 402.519 145.436ZM515.303 33.464C509.92 33.464 505.494 31.9088 502.025 28.7985C498.675 25.5685 497 21.6208 497 16.9553C497 12.1702 498.675 8.22251 502.025 5.11219C505.494 1.88224 509.92 0.267264 515.303 0.267264C520.567 0.267264 524.873 1.88224 528.223 5.11219C531.692 8.22251 533.427 12.1702 533.427 16.9553C533.427 21.6208 531.692 25.5685 528.223 28.7985C524.873 31.9088 520.567 33.464 515.303 33.464ZM530.556 43.8716V144H499.871V43.8716H530.556ZM213.225 174.872V275H182.54V261.362C179.43 265.789 175.183 269.377 169.8 272.129C164.536 274.761 158.674 276.077 152.214 276.077C144.558 276.077 137.799 274.402 131.937 271.052C126.076 267.583 121.53 262.619 118.3 256.159C115.07 249.699 113.455 242.102 113.455 233.37V174.872H143.96V229.242C143.96 235.942 145.695 241.145 149.164 244.854C152.633 248.562 157.299 250.416 163.16 250.416C169.142 250.416 173.867 248.562 177.336 244.854C180.805 241.145 182.54 235.942 182.54 229.242V174.872H213.225ZM275.998 276.436C267.265 276.436 259.49 274.94 252.671 271.949C245.852 268.959 240.469 264.891 236.521 259.747C232.573 254.484 230.36 248.622 229.882 242.162H260.207C260.566 245.631 262.181 248.443 265.052 250.596C267.923 252.749 271.452 253.826 275.639 253.826C279.467 253.826 282.398 253.108 284.432 251.673C286.585 250.117 287.662 248.144 287.662 245.751C287.662 242.88 286.167 240.786 283.176 239.471C280.185 238.035 275.34 236.48 268.641 234.805C261.463 233.13 255.482 231.396 250.697 229.601C245.912 227.687 241.785 224.756 238.315 220.809C234.846 216.741 233.112 211.298 233.112 204.479C233.112 198.737 234.667 193.534 237.777 188.868C241.007 184.083 245.673 180.315 251.774 177.563C257.994 174.812 265.351 173.436 273.845 173.436C286.406 173.436 296.275 176.546 303.453 182.767C310.75 188.988 314.937 197.242 316.014 207.53H287.662C287.183 204.061 285.628 201.309 282.996 199.276C280.484 197.242 277.135 196.225 272.948 196.225C269.359 196.225 266.607 196.943 264.693 198.378C262.779 199.694 261.822 201.549 261.822 203.941C261.822 206.812 263.318 208.965 266.308 210.401C269.419 211.837 274.204 213.272 280.664 214.708C288.081 216.622 294.122 218.536 298.787 220.45C303.453 222.244 307.52 225.235 310.989 229.422C314.578 233.489 316.432 238.992 316.552 245.93C316.552 251.792 314.877 257.056 311.528 261.721C308.298 266.267 303.572 269.856 297.352 272.488C291.251 275.12 284.133 276.436 275.998 276.436ZM429.711 223.321C429.711 226.192 429.532 229.183 429.173 232.293H359.729C360.207 238.514 362.181 243.299 365.65 246.648C369.239 249.878 373.606 251.493 378.75 251.493C386.406 251.493 391.729 248.263 394.72 241.803H427.378C425.703 248.383 422.653 254.304 418.227 259.568C413.92 264.832 408.477 268.959 401.898 271.949C395.318 274.94 387.961 276.436 379.826 276.436C370.017 276.436 361.284 274.342 353.628 270.155C345.972 265.968 339.99 259.987 335.684 252.211C331.377 244.435 329.224 235.343 329.224 224.936C329.224 214.528 331.317 205.436 335.504 197.661C339.811 189.885 345.792 183.903 353.448 179.717C361.104 175.53 369.897 173.436 379.826 173.436C389.516 173.436 398.129 175.47 405.666 179.537C413.202 183.604 419.064 189.406 423.251 196.943C427.558 204.479 429.711 213.272 429.711 223.321ZM398.309 215.246C398.309 209.982 396.514 205.795 392.925 202.685C389.337 199.575 384.851 198.02 379.467 198.02C374.323 198.02 369.957 199.515 366.368 202.506C362.899 205.496 360.746 209.743 359.908 215.246H398.309Z"
+                  fill="#B7B9BC"
+                />
+              </svg>
+            </div>
+            <div className="tools-img">
+              <img src={Tools} alt="" />
+            </div>
+          </div>
+          <div className="contact-section | container">
+            <div className="contact-section-left">
+              <div className="contact-heading | heading">
+                Don't be <br /> <span> a stranger 👋</span>
+              </div>
+              <div className="sub-heading | contact-sub-heading">Send me a message</div>
+              <form>
+                <div className="contact-form-inputs">
+                  <div className="contact-form-input">
+                    <p>Enter your name</p>
+                    <input required type="text" placeholder="Name" />
+                  </div>
+                  <div className="contact-form-input">
+                    <p>Enter your email Id</p>
+                    <input required type="email" placeholder="Email Id" />
+                  </div>
+                  <div className="contact-form-input">
+                    <p>Enter your message</p>
+                    <textarea required type="text" placeholder="message" />
+                  </div>
+                  <div className="btns | contact-form-btn">
+                    <button
+                      style={{ color: "#fff", backgroundColor: "#FDB400" }}
+                      type="submit"
+                      className="btn | btn-primary"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div className="contact-section-right">
+              <img src={Contact} alt="" />
             </div>
           </div>
         </div>
