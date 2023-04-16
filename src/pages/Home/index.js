@@ -22,7 +22,7 @@ import dotone from "../../assets/img/dotone.png";
 import Jalsa from "../../assets/img/jalsa.png";
 import About from "../../assets/img/about.png";
 import Navbar from "../../components/Navbar";
-import AboutGif from "../../assets/img/about.gif";
+import AboutGif from "../../assets/img/about-min.gif";
 import {
   Link,
   Element,
